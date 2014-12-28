@@ -40,10 +40,10 @@ do
     tar -xvf $p.tar.gz
     
     # Make the Arch packages
-    if [-d "$p"]; then
+    if [[ -d "$p" ]]; then
         cd $p
         makepkg --config ../../makepkg64.conf && mv *.pkg.tar.xz ../../x86_64
-        linux32 makepkg --config ../../makepkg32.conf && mv *.pkg.tar.xz ../../i686
+        #linux32 makepkg --config ../../makepkg32.conf && mv *.pkg.tar.xz ../../i686
         cd ..
     fi
 done
